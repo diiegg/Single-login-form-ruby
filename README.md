@@ -40,7 +40,7 @@ Ncdu
 
 ###### Install
  ```
-git clone git@github.com:kirillshevch/rails-api-template.git
+git clone https://github.com/diiegg/Single-login-form-ruby.git
 cd rails-api-template
 bundle install
 rails db:create
