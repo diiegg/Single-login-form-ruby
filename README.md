@@ -27,45 +27,40 @@ Ubuntu server 14.06
 ## Configure the enviroment 
  ###### Using Chef to deploy the Server Stack 
  ```
- 
-    Ubuntu 16.04
-    PostgreSQL
-    Redis
-    Monit
-    RVM
-    Node.js
-    Nginx
-    Ncdu
-
+Ubuntu 16.04
+PostgreSQL
+Redis
+Monit
+RVM
+Node.js
+Nginx
+Ncdu
 ```
 ### Install and Deploy in a existing Produciton Enviroment 
 
 ###### Install
  ```
 git clone git@github.com:kirillshevch/rails-api-template.git
- cd rails-api-template
- bundle install
- rails db:create
- rails db:migrate
- rails s
-
+cd rails-api-template
+bundle install
+rails db:create
+rails db:migrate
+rails s
 
 ```
 ###### Deploy
  ```
- $ cap production deploy
-$ cap production deploy:upload_configs
-$ cap production deploy
+cap production deploy
+cap production deploy:upload_configs
+cap production deploy
 
 Next releases:
-
-$ cap production deploy
+cap production deploy
 
 Additional tasks:
-
-$ cap production app:stop
-$ cap production app:start
-$ cap production app:restart
+cap production app:stop
+cap production app:start
+cap production app:restart
 
 ```
 ### Create a new Production Enviroment
@@ -84,9 +79,9 @@ postgres=# \q
 ```
 nano config/database.yml (add the following line under it (if it doesn't already exist):)
 
-  host: localhost
-  username: **appname***
-  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
+host: localhost
+username: **appname***
+password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
 ```
 
 ### Database Production creation
@@ -96,8 +91,8 @@ RAILS_ENV=production rake db:create
 
 ###### Generate a Controller
 ```
-    rails generate scaffold Task title:string note:text
-    RAILS_ENV=production rake db:migrate
+rails generate scaffold Task title:string note:text
+RAILS_ENV=production rake db:migrate
 ```
     
 ### Database Precomile Assets
@@ -117,8 +112,9 @@ RAILS_ENV=production rails server --binding=server_public_IP
 ## Create a Unicorn Script
 ```
 sudo vi /etc/init.d/unicorn_appname
-Copy and paste the following code replace User and APPname with appropriate values
-
+```
+##Copy and paste the following code replace User and APPname with appropriate values
+```
 #!/bin/sh
 
 ### BEGIN INIT INFO
@@ -195,10 +191,10 @@ esac
     sudo update-rc.d unicorn_**appname** defaults
 ```
    
-## Feed the unicorn
+## Feed the Unicorn
 ```
 sudo service unicorn_appname start
-
+```
 ### Install and Configure Nginx
 ```
 sudo apt-get install nginx
@@ -206,7 +202,7 @@ sudo apt-get install nginx
 sudo nano /etc/nginx/sites-available/default
 ```
 
-###### Replace Username and appname with the appropriate values
+#### Replace Username and appname with the appropriate values
 ```
 upstream app {
     # Path to Unicorn SOCK file, as defined previously
@@ -242,4 +238,3 @@ sudo service nginx restart
 ### Now the production environment of your Rails application is accessible via your server's public IP address or FQDN.
 ```
 http://server_public_IP
-```
