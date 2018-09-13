@@ -1,7 +1,9 @@
 ### Rails App, Deploy it with Unicon and Nginx on Ubuntu 14.04
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app operation allow to:
+edit, create and change pasword to the users
+
+Demo: mychef.ddns.net
 
 Things you may want to cover:
 
@@ -237,4 +239,4 @@ sudo service nginx restart
 
 ### Now the production environment of your Rails application is accessible via your server's public IP address or FQDN.
 ```
-http://server_public_IP
+http://server_public_IP (use no-ip (https://www.noip.com) to forward your public ip to a domain)
