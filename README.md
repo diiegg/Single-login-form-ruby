@@ -113,7 +113,7 @@ RAILS_ENV=production rails server --binding=server_public_IP
 ```
 sudo vi /etc/init.d/unicorn_appname
 ```
-##Copy and paste the following code replace User and APPname with appropriate values
+## Copy and paste the following code replace User and APPname with appropriate values
 ```
 #!/bin/sh
 
