@@ -8,12 +8,12 @@ Things you may want to cover:
 ### Ruby version
 ```
 
-   ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
 ```
 
 ### Rails Version
 ```
-   Rails 5.2.1
+Rails 5.2.1
 ```
 
 ### System dependencies
